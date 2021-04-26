@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Database\Seeders\GendersSeeder;
 use Database\Seeders\ItemClassificationSeeder;
+use Database\Seeders\UserSeeder;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -16,6 +17,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
+            UserSeeder::class,
             ItemClassificationSeeder::class,
             ItemTypesSeeder::class,
             ItemSeeder::class,

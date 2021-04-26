@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Genders;
+use App\Models\ItemType;
 use Illuminate\Http\Request;
 
-class GendersController extends Controller
+class ItemTypeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class GendersController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Genders  $genders
+     * @param  \App\Models\ItemTypes  $itemTypes
      * @return \Illuminate\Http\Response
      */
-    public function show(Genders $genders)
+    public function show(ItemTypes $itemTypes)
     {
         //
     }
@@ -52,10 +52,10 @@ class GendersController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Genders  $genders
+     * @param  \App\Models\ItemTypes  $itemTypes
      * @return \Illuminate\Http\Response
      */
-    public function edit(Genders $genders)
+    public function edit(ItemTypes $itemTypes)
     {
         //
     }
@@ -64,10 +64,10 @@ class GendersController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Genders  $genders
+     * @param  \App\Models\ItemTypes  $itemTypes
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Genders $genders)
+    public function update(Request $request, ItemTypes $itemTypes)
     {
         //
     }
@@ -75,10 +75,10 @@ class GendersController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Genders  $genders
+     * @param  \App\Models\ItemTypes  $itemTypes
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Genders $genders)
+    public function destroy(ItemTypes $itemTypes)
     {
         //
     }

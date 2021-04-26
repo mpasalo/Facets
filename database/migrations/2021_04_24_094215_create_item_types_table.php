@@ -15,11 +15,13 @@ class CreateItemTypesTable extends Migration
     {
         Schema::create('item_types', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('classification_id');
+            $table->unsignedInteger('item_classification_id');
             $table->text('name');
+            $table->boolean('is_checked')->default(0);
+            $table->softDeletes();
             $table->timestamps();
 
-            $table->foreign('classification_id')
+            $table->foreign('item_classification_id')
                 ->references('id')
                 ->on('item_classifications')
                 ->onDelete('cascade');

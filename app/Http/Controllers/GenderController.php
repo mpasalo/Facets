@@ -2,11 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ItemTypes;
+use App\Models\Gender;
+use App\Models\ItemClassification;
+use App\Models\ItemType;
+use App\Services\GenderService;
 use Illuminate\Http\Request;
 
-class ItemTypesController extends Controller
+class GenderController extends Controller
 {
+    public function __construct()
+    {
+        $this->genderService = new GenderService;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +22,9 @@ class ItemTypesController extends Controller
      */
     public function index()
     {
-        //
+        $results = $this->genderService->getAll();
+
+        return response()->json($results);
     }
 
     /**
@@ -41,10 +51,10 @@ class ItemTypesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\ItemTypes  $itemTypes
+     * @param  \App\Models\Genders  $gender
      * @return \Illuminate\Http\Response
      */
-    public function show(ItemTypes $itemTypes)
+    public function show(Gender $gender)
     {
         //
     }
@@ -52,10 +62,10 @@ class ItemTypesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\ItemTypes  $itemTypes
+     * @param  \App\Models\Genders  $gender
      * @return \Illuminate\Http\Response
      */
-    public function edit(ItemTypes $itemTypes)
+    public function edit(Gender $gender)
     {
         //
     }
@@ -64,10 +74,10 @@ class ItemTypesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\ItemTypes  $itemTypes
+     * @param  \App\Models\Genders  $gender
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ItemTypes $itemTypes)
+    public function update(Request $request, Gender $gender)
     {
         //
     }
@@ -75,11 +85,16 @@ class ItemTypesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\ItemTypes  $itemTypes
+     * @param  \App\Models\Gender  $gender
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ItemTypes $itemTypes)
+    public function destroy(Gender $gender)
     {
-        //
+        $this->genderService->delete($gender);
+    }
+
+    public function restore()
+    {
+        $this->genderService->restore();
     }
 }

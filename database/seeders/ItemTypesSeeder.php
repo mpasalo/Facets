@@ -21,13 +21,13 @@ class ItemTypesSeeder extends Seeder
             'Belts',
             'Jewelry and Watches',
             'Scarves',
-            'Cups',
+            'Bags',
         ];
 
         foreach ($names as $name) {
             ItemType::create([
                 'name'              => $name,
-                'classification_id' => 1
+                'item_classification_id' => 1
             ]);
         }
     }

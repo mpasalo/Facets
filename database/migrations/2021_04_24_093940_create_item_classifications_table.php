@@ -17,6 +17,7 @@ class CreateItemClassificationsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('gender_id');
             $table->text('name');
+            $table->softDeletes();
             $table->timestamps();
 
             $table->foreign('gender_id')
