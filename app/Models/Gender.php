@@ -24,6 +24,7 @@ class Gender extends Model
     protected $casts = [
         'id'        => 'integer',
         'name'      => 'string',
+        'is_checked'   => 'boolean'
     ];
 
     public function itemClassifications(): HasMany

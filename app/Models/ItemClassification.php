@@ -23,9 +23,10 @@ class ItemClassification extends Model
      * @var array
      */
     protected $casts = [
-        'id'        => 'integer',
-        'gender_id' => 'integer',
-        'name'      => 'string',
+        'id'           => 'integer',
+        'gender_id'    => 'integer',
+        'name'         => 'string',
+        'is_checked'   => 'boolean'
     ];
 
     public function gender(): BelongsTo

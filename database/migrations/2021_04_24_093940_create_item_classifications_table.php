@@ -17,6 +17,7 @@ class CreateItemClassificationsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('gender_id');
             $table->text('name');
+            $table->boolean('is_checked')->default(0);
             $table->softDeletes();
             $table->timestamps();
 

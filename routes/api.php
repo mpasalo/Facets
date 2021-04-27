@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\GenderController;
 use App\Http\Controllers\ItemClassificationController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\ItemTypeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -30,6 +31,8 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::delete('item-classifications/{classification}', [ItemClassificationController::class, 'destroy'])->name('item-classification.destroy');
     Route::get('item-classifications/{gender}/trashed', [ItemClassificationController::class, 'getTrashed'])->name('item-classification.get-trashed');
     Route::patch('item-classifications/{gender}/restore', [ItemClassificationController::class, 'restore'])->name('item-classification.restore');
+
+    Route::delete('item-types/{type}', [ItemTypeController::class, 'destroy'])->name('item-type.destroy');
 
     Route::get('items', [ItemController::class, 'index'])->name('item.index');
 

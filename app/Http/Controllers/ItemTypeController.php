@@ -3,10 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\ItemType;
+use App\Services\ItemTypeService;
 use Illuminate\Http\Request;
 
 class ItemTypeController extends Controller
 {
+    public function __construct()
+    {
+        $this->itemTypeService = new ItemTypeService;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -41,10 +47,10 @@ class ItemTypeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\ItemTypes  $itemTypes
+     * @param  \App\Models\ItemType  $itemType
      * @return \Illuminate\Http\Response
      */
-    public function show(ItemTypes $itemTypes)
+    public function show(ItemType $itemType)
     {
         //
     }
@@ -52,10 +58,10 @@ class ItemTypeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\ItemTypes  $itemTypes
+     * @param  \App\Models\ItemType  $itemType
      * @return \Illuminate\Http\Response
      */
-    public function edit(ItemTypes $itemTypes)
+    public function edit(ItemType $itemType)
     {
         //
     }
@@ -64,10 +70,10 @@ class ItemTypeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\ItemTypes  $itemTypes
+     * @param  \App\Models\ItemType  $itemType
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ItemTypes $itemTypes)
+    public function update(Request $request, ItemType $itemType)
     {
         //
     }
@@ -75,11 +81,11 @@ class ItemTypeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\ItemTypes  $itemTypes
+     * @param  \App\Models\ItemType  $itemType
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ItemTypes $itemTypes)
+    public function destroy(ItemType $type)
     {
-        //
+        $this->itemTypeService->delete($type);
     }
 }
